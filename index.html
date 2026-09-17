@@ -3,72 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baza | কেনা-বেচার সহজ মাধ্যম</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-        body { background-color: #f4f6f8; color: #333; line-height: 1.6; }
-        
-        .navbar { background-color: #008069; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
-        .logo span { color: #ffce00; }
-        
-        .nav-right { display: flex; align-items: center; gap: 10px; }
-        .btn-auth { color: white; text-decoration: none; font-weight: bold; font-size: 13px; border: 1px solid rgba(255,255,255,0.4); padding: 6px 12px; border-radius: 20px; }
-        .btn-post { background-color: #ffce00; color: #111; padding: 8px 12px; font-weight: bold; border-radius: 20px; text-decoration: none; font-size: 13px; }
-        
-        .hero { background-color: #008069; color: white; text-align: center; padding: 30px 15px; }
-        .search-container { max-width: 400px; margin: 15px auto 0; display: flex; gap: 5px; }
-        .search-container input { flex: 1; padding: 10px; border: none; border-radius: 4px; outline: none; }
-        .search-container button { background-color: #ffce00; border: none; padding: 10px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; }
-        
-        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
-        .categories { display: flex; gap: 10px; margin: 15px 0 25px; flex-wrap: wrap; }
-        .cat-btn { background: white; padding: 10px 15px; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-        .card { background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .price { color: #008069; font-size: 16px; font-weight: bold; margin-top: 5px; }
-    </style>
+    <title>আমার ই-কমার্স শপ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <a href="#" class="logo">Baza<span>.com.bd</span></a>
-    <div class="nav-right">
-        <a href="#" class="btn-auth">লগইন / একাউন্ট</a>
-        <a href="#" class="btn-post">+ বিজ্ঞাপন দিন</a>
-    </div>
-</nav>
-
-<header class="hero">
-    <h2>Baza-তে সবকিছু কেনা-বেচা করুন সহজে</h2>
-    <div class="search-container">
-        <input type="text" placeholder="কী খুঁজছেন?...">
-        <button>খুঁজুন</button>
-    </div>
-</header>
-
-<div class="container">
-    <h3>পপুলার ক্যাটাগরি</h3>
-    <div class="categories">
-        <div class="cat-btn">📱 মোবাইল</div>
-        <div class="cat-btn">💻 ইলেকট্রনিক্স</div>
-        <div class="cat-btn">🏍️ বাইক</div>
-    </div>
-
-    <h3>সর্বশেষ বিজ্ঞাপন</h3>
-    <div class="products">
-        <div class="card">
-            <h4>Samsung S22 Ultra</h4>
-            <p style="font-size:12px; color:#666;">📍 চট্টগ্রাম</p>
-            <div class="price">৳ ৬৫,০০০</div>
+    <!-- হেডার বা ন্যাভিগেশন বার -->
+    <header>
+        <div class="logo">ই-শপ</div>
+        <nav>
+            <ul>
+                <li><a href="#">হোম</a></li>
+                <li><a href="#products">পণ্যসমূহ</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            🛒 কার্ট (<span id="cart-count">0</span>)
         </div>
-        <div class="card">
-            <h4>Yamaha FZ-S V3</h4>
-            <p style="font-size:12px; color:#666;">📍 চট্টগ্রাম</p>
-            <div class="price">৳ ১,৮৫,০০০</div>
+    </header>
+
+    <!-- ব্যানার সেクション -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>সেরা অফারে অনলাইন শপিং করুন</h1>
+            <p>আপনার পছন্দের পণ্যটি লুফে নিন আজই!</p>
+            <a href="#products" class="btn">কেনাকাটা শুরু করুন</a>
         </div>
-    </div>
-</div>
+    </section>
+
+    <!-- পণ্যের তালিকা -->
+    <section id="products" class="products-section">
+        <h2>আমাদের জনপ্রিয় পণ্যসমূহ</h2>
+        <div class="product-grid">
+            <!-- পণ্য ১ -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="পণ্য ১">
+                <h3>স্টাইলিশ টি-শার্ট</h3>
+                <p class="price">৫০০ টাকা</p>
+                <button onclick="addToCart()">কার্টে যোগ করুন</button>
+            </div>
+            <!-- পণ্য ২ -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="পণ্য ২">
+                <h3>ক্যাজুয়াল জুতো</h3>
+                <p class="price">১,৫০০ টাকা</p>
+                <button onclick="addToCart()">কার্টে যোগ করুন</button>
+            </div>
+            <!-- পণ্য ৩ -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="পণ্য ৩">
+                <h3>স্মার্ট ওয়াচ</h3>
+                <p class="price">২,৫০০ টাকা</p>
+                <button onclick="addToCart()">কার্টে যোগ করুন</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ফুটার -->
+    <footer>
+        <p>&copy; ২০২৬ ই-শপ। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+            alert('পণ্যটি কার্টে যোগ করা হয়েছে!');
+        }
+    </script>
 
 </body>
 </html>
